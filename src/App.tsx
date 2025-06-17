@@ -326,23 +326,21 @@ export default function App() {
               <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium">Disponível Agora</span>
-              </div>
-                <h2 className="text-5xl lg:text-6xl font-bold">
-                Disponível na
+              </div>              <h2 className="text-5xl lg:text-6xl font-bold">
+                Disponível em
                 <span className="block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  Drogasil
+                  Farmácias
                 </span>
               </h2>
               
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Adquira o Lembra+ com preço especial de lançamento. Edição limitada Coleção RED-Vermelha disponível agora!
+                Adquira o Lembra+ com preço especial de lançamento. Disponível nas principais redes de farmácias do Brasil!
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="group bg-gradient-to-r from-purple-500 to-cyan-500 px-10 py-5 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:-translate-y-1">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">              <button className="group bg-gradient-to-r from-purple-500 to-cyan-500 px-10 py-5 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:-translate-y-1">
                 <span className="flex items-center space-x-3">
-                  <span>Encontrar na Drogasil</span>
+                  <span>Encontrar em Farmácias</span>
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -358,7 +356,7 @@ export default function App() {
                 <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Disponível nas lojas</span>
+                <span>Disponível nas farmácias</span>
               </div>
               <div className="flex items-center justify-center space-x-2 text-gray-300">
                 <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -415,7 +413,7 @@ export default function App() {
               <ul className="space-y-3 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Central de Ajuda</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Manual do Usuário</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Drogasil</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Farmácias Parceiras</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Garantia</a></li>
               </ul>
             </div>

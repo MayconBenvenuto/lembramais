@@ -143,43 +143,41 @@ export default function App() {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Cada recurso foi projetado para maximizar sua saúde e bem-estar
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          </div>          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <FeatureCard
-              icon="🤖"
-              title="IA Preditiva"
-              description="Algoritmos avançados que aprendem seus padrões e otimizam automaticamente seus horários de medicação."
-              gradient="from-purple-500 to-pink-500"
-            />
-            <FeatureCard
-              icon="🔮"
-              title="Realidade Aumentada"
-              description="Interface AR que projeta informações dos medicamentos diretamente no seu campo de visão."
-              gradient="from-cyan-500 to-blue-500"
-            />
-            <FeatureCard
-              icon="⚡"
-              title="Ultra Rápido"
-              description="Dispensação em menos de 3 segundos com sistema pneumático de alta precisão."
+              icon="💡"
+              title="Sinal Luminoso Inteligente"
+              description="O compartimento acende automaticamente no horário correto para lembrar você de tomar seus medicamentos."
               gradient="from-yellow-500 to-orange-500"
             />
             <FeatureCard
-              icon="🛡️"
-              title="Segurança Total"
-              description="Criptografia militar e biometria avançada protegem seus dados médicos sensíveis."
+              icon="�"
+              title="App Conectado"
+              description="Aplicativo no celular para configurar horários, acompanhar histórico e receber notificações."
+              gradient="from-cyan-500 to-blue-500"
+            />
+            <FeatureCard
+              icon="👥"
+              title="Cuidado Familiar"
+              description="Familiares e cuidadores podem acompanhar remotamente através do aplicativo compartilhado."
               gradient="from-green-500 to-teal-500"
             />
             <FeatureCard
-              icon="☁️"
-              title="Cloud Sync"
-              description="Sincronização automática com a nuvem para acesso aos seus dados em qualquer lugar."
+              icon="�"
+              title="Bateria Duradoura"
+              description="Autonomia de longa duração com indicador de bateria baixa no aplicativo."
+              gradient="from-purple-500 to-pink-500"
+            />
+            <FeatureCard
+              icon="⏰"
+              title="Múltiplos Horários"
+              description="Configure diferentes horários para diversos medicamentos ao longo do dia."
               gradient="from-blue-500 to-purple-500"
             />
             <FeatureCard
-              icon="📱"
-              title="App Inteligente"
-              description="Controle total pelo smartphone com notificações e relatórios personalizados."
+              icon="�"
+              title="Histórico Completo"
+              description="Acompanhe a adesão ao tratamento com relatórios detalhados no aplicativo."
               gradient="from-pink-500 to-red-500"
             />
           </div>
@@ -332,16 +330,15 @@ export default function App() {
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium">Disponível Agora</span>
               </div>
-              
-              <h2 className="text-5xl lg:text-6xl font-bold">
-                Pronto para o
+                <h2 className="text-5xl lg:text-6xl font-bold">
+                Disponível em
                 <span className="block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  Futuro da Saúde?
+                  Farmácias
                 </span>
               </h2>
               
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Junte-se à revolução da medicina personalizada e transforme sua vida hoje mesmo
+                Adquira o Lembra+ com preço especial de lançamento. Disponível nas principais redes de farmácias do Brasil!
               </p>
             </div>
             
