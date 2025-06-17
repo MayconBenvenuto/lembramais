@@ -4,10 +4,16 @@ import { ConvexReactClient } from "convex/react";
 import "./index.css";
 import App from "./App";
 
-const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL as string);
+// Configuração condicional do Convex
+const convexUrl = import.meta.env.VITE_CONVEX_URL;
+const convex = convexUrl ? new ConvexReactClient(convexUrl) : null;
 
 createRoot(document.getElementById("root")!).render(
-  <ConvexAuthProvider client={convex}>
+  convex ? (
+    <ConvexAuthProvider client={convex}>
+      <App />
+    </ConvexAuthProvider>
+  ) : (
     <App />
-  </ConvexAuthProvider>,
+  )
 );

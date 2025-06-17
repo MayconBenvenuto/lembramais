@@ -449,7 +449,7 @@ export default function App() {
               <div className="space-y-3 text-gray-400">
                 <p className="flex items-center space-x-2">
                   <span>📧</span>
-                  <span>hello@pilltech.ai</span>
+                  <span>contato@lembramais.com.br</span>
                 </p>
                 <p className="flex items-center space-x-2">
                   <span>📞</span>

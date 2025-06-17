@@ -26,14 +26,13 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">P</span>
+              <div className="relative">                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">L+</span>
                 </div>
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                PillTech
+                Lembra+
               </span>
             </div>
 
@@ -394,7 +393,7 @@ export default function App() {
                   <span className="text-white font-bold text-xl">P</span>
                 </div>
                 <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  PillTech
+                  Lembra+
                 </span>
               </div>
               <p className="text-gray-400 leading-relaxed">
@@ -433,7 +432,7 @@ export default function App() {
               <div className="space-y-3 text-gray-400">
                 <p className="flex items-center space-x-2">
                   <span>📧</span>
-                  <span>hello@pilltech.ai</span>
+                  <span>contato@lembramais.com.br</span>
                 </p>
                 <p className="flex items-center space-x-2">
                   <span>📞</span>
@@ -448,7 +447,7 @@ export default function App() {
           </div>
 
           <div className="border-t border-white/10 mt-16 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 PillTech. Todos os direitos reservados. Feito com ❤️ para um futuro mais saudável.</p>
+            <p>&copy; 2025 Lembra+. Todos os direitos reservados. Tecnologia que cuida com carinho.</p>
           </div>
         </div>
       </footer>
@@ -662,7 +661,7 @@ function Interactive3DDevice() {
             <div className="w-80 h-96 mx-auto relative">
               <img 
                 src={dispensadorImage} 
-                alt="Dispensador de Medicamentos PillTech" 
+                alt="Dispensador de Medicamentos Lembra+" 
                 className="w-full h-full object-contain rounded-3xl shadow-2xl"
                 style={{ filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))' }}
               />
