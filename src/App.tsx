@@ -146,9 +146,8 @@ export default function App() {
               title="Sinal Luminoso Inteligente"
               description="O compartimento acende automaticamente no horário correto para lembrar você de tomar seus medicamentos."
               gradient="from-yellow-500 to-orange-500"
-            />
-            <FeatureCard
-              icon="�"
+            />            <FeatureCard
+              icon="📱"
               title="App Conectado"
               description="Aplicativo no celular para configurar horários, acompanhar histórico e receber notificações."
               gradient="from-cyan-500 to-blue-500"
@@ -158,9 +157,8 @@ export default function App() {
               title="Cuidado Familiar"
               description="Familiares e cuidadores podem acompanhar remotamente através do aplicativo compartilhado."
               gradient="from-green-500 to-teal-500"
-            />
-            <FeatureCard
-              icon="�"
+            />            <FeatureCard
+              icon="🔋"
               title="Bateria Duradoura"
               description="Autonomia de longa duração com indicador de bateria baixa no aplicativo."
               gradient="from-purple-500 to-pink-500"
@@ -170,9 +168,8 @@ export default function App() {
               title="Múltiplos Horários"
               description="Configure diferentes horários para diversos medicamentos ao longo do dia."
               gradient="from-blue-500 to-purple-500"
-            />
-            <FeatureCard
-              icon="�"
+            />            <FeatureCard
+              icon="📊"
               title="Histórico Completo"
               description="Acompanhe a adesão ao tratamento com relatórios detalhados no aplicativo."
               gradient="from-pink-500 to-red-500"
@@ -265,11 +262,10 @@ export default function App() {
                 Inteligente
               </span>
             </h2>
-          </div>          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <TechCard
+          </div>          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">            <TechCard
               title="LED Indicador"
               value="Luz Inteligente"
-              icon="�"
+              icon="💡"
               description="Acende automaticamente no horário da medicação"
             />
             <TechCard
@@ -295,17 +291,15 @@ export default function App() {
               value="Plástico Atóxico"
               icon="🛡️"
               description="Seguro para contato com medicamentos"
-            />
-            <TechCard
+            />            <TechCard
               title="App Mobile"
               value="iOS + Android"
-              icon="�"
+              icon="📱"
               description="Controle total pelo smartphone"
-            />
-            <TechCard
+            />            <TechCard
               title="Notificações"
               value="Push + SMS"
-              icon="�"
+              icon="🔔"
               description="Lembretes múltiplos configuráveis"
             />
             <TechCard
