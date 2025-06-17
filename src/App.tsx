@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import dispensadorImage from '/images/dispensador.png';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -75,22 +76,21 @@ export default function App() {
       <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8 z-10">
-            <div className="space-y-6">
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+            <div className="space-y-6">              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium">Tecnologia Revolucionária</span>
+                <span className="text-sm font-medium">Lançamento Oficial</span>
               </div>
               
               <h1 className="text-6xl lg:text-7xl font-bold leading-tight">
-                O Futuro do
+                Lembra+
                 <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                  Cuidado Médico
+                  Cuidado Inteligente
                 </span>
               </h1>
               
               <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                Transforme sua rotina de medicamentos com inteligência artificial, 
-                automação avançada e design futurista. Nunca mais esqueça uma dose.
+                O compartimento inteligente que acende no horário certo para lembrar você de tomar seus medicamentos. 
+                Conectado ao seu celular para maior autonomia e segurança.
               </p>
             </div>
 
@@ -106,12 +106,10 @@ export default function App() {
               <button className="border-2 border-white/20 backdrop-blur-sm px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/10 transition-all duration-300">
                 Ver Demonstração
               </button>
-            </div>
-
-            <div className="grid grid-cols-3 gap-8 pt-8">
-              <StatCard number="99.9%" label="Precisão" />
-              <StatCard number="24/7" label="Monitoramento" />
-              <StatCard number="AI" label="Powered" />
+            </div>            <div className="grid grid-cols-3 gap-8 pt-8">
+              <StatCard number="7" label="Dias" />
+              <StatCard number="30" label="Dias Bateria" />
+              <StatCard number="LED" label="Inteligente" />
             </div>
           </div>
 
@@ -133,53 +131,51 @@ export default function App() {
           <div className="text-center space-y-6 mb-20">
             <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
               <span className="text-sm font-medium">Recursos Avançados</span>
-            </div>
-            <h2 className="text-5xl font-bold">
+            </div>            <h2 className="text-5xl font-bold">
               Tecnologia que
               <span className="block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                Salva Vidas
+                Cuida com Carinho
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Cada recurso foi projetado para maximizar sua saúde e bem-estar
+              Funcionalidades pensadas especialmente para promover autonomia e segurança na medicação
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <FeatureCard
-              icon="🤖"
-              title="IA Preditiva"
-              description="Algoritmos avançados que aprendem seus padrões e otimizam automaticamente seus horários de medicação."
-              gradient="from-purple-500 to-pink-500"
-            />
-            <FeatureCard
-              icon="🔮"
-              title="Realidade Aumentada"
-              description="Interface AR que projeta informações dos medicamentos diretamente no seu campo de visão."
-              gradient="from-cyan-500 to-blue-500"
-            />
-            <FeatureCard
-              icon="⚡"
-              title="Ultra Rápido"
-              description="Dispensação em menos de 3 segundos com sistema pneumático de alta precisão."
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">            <FeatureCard
+              icon="💡"
+              title="Sinal Luminoso Inteligente"
+              description="O compartimento acende automaticamente no horário correto para lembrar você de tomar seus medicamentos."
               gradient="from-yellow-500 to-orange-500"
             />
             <FeatureCard
-              icon="🛡️"
-              title="Segurança Total"
-              description="Criptografia militar e biometria avançada protegem seus dados médicos sensíveis."
+              icon="�"
+              title="App Conectado"
+              description="Aplicativo no celular para configurar horários, acompanhar histórico e receber notificações."
+              gradient="from-cyan-500 to-blue-500"
+            />
+            <FeatureCard
+              icon="👥"
+              title="Cuidado Familiar"
+              description="Familiares e cuidadores podem acompanhar remotamente através do aplicativo compartilhado."
               gradient="from-green-500 to-teal-500"
             />
             <FeatureCard
-              icon="☁️"
-              title="Cloud Sync"
-              description="Sincronização automática com a nuvem para acesso aos seus dados em qualquer lugar."
+              icon="�"
+              title="Bateria Duradoura"
+              description="Autonomia de longa duração com indicador de bateria baixa no aplicativo."
+              gradient="from-purple-500 to-pink-500"
+            />
+            <FeatureCard
+              icon="⏰"
+              title="Múltiplos Horários"
+              description="Configure diferentes horários para diversos medicamentos ao longo do dia."
               gradient="from-blue-500 to-purple-500"
             />
             <FeatureCard
-              icon="📱"
-              title="App Inteligente"
-              description="Controle total pelo smartphone com notificações e relatórios personalizados."
+              icon="�"
+              title="Histórico Completo"
+              description="Acompanhe a adesão ao tratamento com relatórios detalhados no aplicativo."
               gradient="from-pink-500 to-red-500"
             />
           </div>
@@ -200,23 +196,21 @@ export default function App() {
                   Qualidade de Vida
                 </span>
               </h2>
-            </div>
-
-            <div className="space-y-8">
+            </div>            <div className="space-y-8">
               <BenefitItem
-                percentage="94%"
+                percentage="85%"
                 title="Redução de Esquecimentos"
-                description="Usuários relatam diminuição drástica no esquecimento de medicamentos"
+                description="Usuários relatam melhora significativa na lembrança dos horários de medicação"
               />
               <BenefitItem
-                percentage="87%"
-                title="Melhora na Adesão"
-                description="Aumento significativo na aderência ao tratamento médico"
+                percentage="78%"
+                title="Maior Autonomia"
+                description="Idosos sentem-se mais independentes no cuidado com a própria saúde"
               />
               <BenefitItem
-                percentage="76%"
-                title="Menos Visitas ao Médico"
-                description="Redução em consultas de emergência por problemas medicamentosos"
+                percentage="92%"
+                title="Tranquilidade Familiar"
+                description="Familiares ficam mais tranquilos sabendo que há um lembrete ativo"
               />
             </div>
           </div>
@@ -230,24 +224,29 @@ export default function App() {
                   value="99.97%"
                   color="green"
                   trend="+2.3% this month"
+                />                <MetricCard
+                  label="Tempo de Resposta"
+                  value="Instantâneo"
+                  color="green"
+                  trend="LED acende na hora"
                 />
                 <MetricCard
-                  label="Response Time"
-                  value="2.1s"
+                  label="Facilidade de Uso"
+                  value="9.2/10"
                   color="blue"
-                  trend="-0.5s improved"
+                  trend="Avaliação dos usuários"
                 />
                 <MetricCard
-                  label="User Satisfaction"
-                  value="4.9/5"
+                  label="Satisfação"
+                  value="4.7/5"
                   color="purple"
-                  trend="+0.2 this week"
+                  trend="Terceira idade aprova"
                 />
                 <MetricCard
-                  label="Uptime"
-                  value="99.9%"
+                  label="Conectividade"
+                  value="98%"
                   color="orange"
-                  trend="24/7 monitoring"
+                  trend="App sempre conectado"
                 />
               </div>
             </div>
@@ -261,63 +260,60 @@ export default function App() {
           <div className="text-center space-y-6 mb-20">
             <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
               <span className="text-sm font-medium">Especificações Técnicas</span>
-            </div>
-            <h2 className="text-5xl font-bold">
-              Engenharia de
+            </div>            <h2 className="text-5xl font-bold">
+              Tecnologia
               <span className="block bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Precisão
+                Inteligente
               </span>
             </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          </div>          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <TechCard
-              title="Processador"
-              value="ARM Cortex-A78"
-              icon="🔥"
-              description="Chip de última geração com IA integrada"
+              title="LED Indicador"
+              value="Luz Inteligente"
+              icon="�"
+              description="Acende automaticamente no horário da medicação"
             />
             <TechCard
-              title="Armazenamento"
-              value="128 compartimentos"
+              title="Compartimentos"
+              value="7 Divisões"
               icon="📦"
-              description="Sistema modular expansível"
+              description="Um para cada dia da semana"
             />
             <TechCard
               title="Conectividade"
-              value="5G + Wi-Fi 6E"
+              value="Bluetooth + Wi-Fi"
               icon="📡"
-              description="Conexão ultra-rápida e estável"
+              description="Conexão estável com o aplicativo"
             />
             <TechCard
               title="Bateria"
-              value="60 dias"
+              value="30 dias"
               icon="🔋"
-              description="Autonomia estendida com carregamento solar"
+              description="Longa duração com carregamento USB"
             />
             <TechCard
-              title="Sensores"
-              value="12 tipos"
-              icon="🎯"
-              description="Monitoramento completo do ambiente"
+              title="Material"
+              value="Plástico Atóxico"
+              icon="🛡️"
+              description="Seguro para contato com medicamentos"
             />
             <TechCard
-              title="Display"
-              value="OLED 4K 7&quot;"
-              icon="📺"
-              description="Interface touchscreen responsiva"
+              title="App Mobile"
+              value="iOS + Android"
+              icon="�"
+              description="Controle total pelo smartphone"
             />
             <TechCard
-              title="Segurança"
-              value="Criptografia AES-256"
-              icon="🔐"
-              description="Proteção de dados médicos"
+              title="Notificações"
+              value="Push + SMS"
+              icon="�"
+              description="Lembretes múltiplos configuráveis"
             />
             <TechCard
-              title="Certificação"
-              value="FDA + CE + ANVISA"
+              title="Garantia"
+              value="2 anos"
               icon="✅"
-              description="Aprovado globalmente"
+              description="Suporte técnico incluído"
             />
           </div>
         </div>
@@ -332,30 +328,29 @@ export default function App() {
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium">Disponível Agora</span>
               </div>
-              
-              <h2 className="text-5xl lg:text-6xl font-bold">
-                Pronto para o
+                <h2 className="text-5xl lg:text-6xl font-bold">
+                Disponível na
                 <span className="block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  Futuro da Saúde?
+                  Drogasil
                 </span>
               </h2>
               
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Junte-se à revolução da medicina personalizada e transforme sua vida hoje mesmo
+                Adquira o Lembra+ com preço especial de lançamento. Edição limitada Coleção RED-Vermelha disponível agora!
               </p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button className="group bg-gradient-to-r from-purple-500 to-cyan-500 px-10 py-5 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:-translate-y-1">
                 <span className="flex items-center space-x-3">
-                  <span>Solicitar Demonstração</span>
+                  <span>Encontrar na Drogasil</span>
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
               </button>
               <button className="border-2 border-white/20 backdrop-blur-sm px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-white/10 transition-all duration-300">
-                Falar com Especialista
+                Ver Demonstração
               </button>
             </div>
 
@@ -364,13 +359,13 @@ export default function App() {
                 <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Entrega em 24h</span>
+                <span>Disponível nas lojas</span>
               </div>
               <div className="flex items-center justify-center space-x-2 text-gray-300">
                 <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Garantia de 5 anos</span>
+                <span>Garantia de 2 anos</span>
               </div>
               <div className="flex items-center justify-center space-x-2 text-gray-300">
                 <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -386,18 +381,17 @@ export default function App() {
       {/* Footer */}
       <footer id="contact" className="relative border-t border-white/10 py-20 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-12">
-            <div className="space-y-6">
+          <div className="grid md:grid-cols-4 gap-12">            <div className="space-y-6">
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">P</span>
+                  <span className="text-white font-bold text-xl">L+</span>
                 </div>
                 <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  PillTech
+                  Lembra+
                 </span>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Revolucionando o cuidado médico através da tecnologia mais avançada do planeta.
+                Tecnologia inteligente para cuidar da sua saúde com carinho e autonomia.
               </p>
               <div className="flex space-x-4">
                 <SocialIcon />
@@ -410,10 +404,10 @@ export default function App() {
             <div className="space-y-6">
               <h3 className="text-lg font-semibold">Produto</h3>
               <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Recursos</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Como Funciona</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Especificações</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Preços</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Comparações</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Onde Comprar</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">App Mobile</a></li>
               </ul>
             </div>
 
@@ -421,9 +415,9 @@ export default function App() {
               <h3 className="text-lg font-semibold">Suporte</h3>
               <ul className="space-y-3 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Central de Ajuda</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Documentação</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">API</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Manual do Usuário</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Drogasil</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Garantia</a></li>
               </ul>
             </div>
 
@@ -655,64 +649,53 @@ function Interactive3DDevice() {
             transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
             transformStyle: 'preserve-3d',
           }}
-        >
-          {/* Main Device Placeholder */}
+        >          {/* Main Device - Imagem Real */}
           <div className="relative">
-            {/* Placeholder para o dispensador */}
-            <div className="w-80 h-96 mx-auto bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl border border-white/20 shadow-2xl overflow-hidden">
-              {/* Display Superior */}
-              <div className="bg-black rounded-t-3xl p-4 border-b border-white/10">
-                <div className="text-center space-y-2">
-                  <div className="text-xs text-gray-400 font-medium">DISPENSADOR DE REMÉDIOS</div>
-                  <div className="text-4xl font-bold text-white">08:30</div>
-                  <div className="text-sm text-gray-300">TERÇA-FEIRA</div>
-                  <div className="flex items-center justify-center space-x-2 mt-3">
-                    <div className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center">
-                      <div className="w-4 h-4 bg-white rounded-full"></div>
+            {/* Imagem do dispensador real */}
+            <div className="w-80 h-96 mx-auto relative">              <img 
+                src={dispensadorImage} 
+                alt="Dispensador de Medicamentos PillTech" 
+                className="w-full h-full object-contain rounded-3xl shadow-2xl"
+                style={{ filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))' }}
+                onError={(e) => {
+                  console.error('Erro ao carregar imagem:', e);
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
+                onLoad={() => console.log('Imagem carregada com sucesso!')}
+              />
+              
+              {/* Overlay com informações interativas */}
+              <div className="absolute inset-0 pointer-events-none">
+                {/* Display de status no topo */}
+                <div className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm rounded-xl px-4 py-2 border border-cyan-400/30">
+                  <div className="text-center space-y-1">
+                    <div className="text-xs text-gray-300 font-medium">PRÓXIMA DOSE</div>
+                    <div className="text-lg font-bold text-cyan-400">08:30</div>
+                    <div className="flex items-center justify-center space-x-1">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-xs text-green-400">ATIVO</span>
                     </div>
-                    <span className="text-cyan-400 font-medium">PRÓXIMA DOSE</span>
                   </div>
                 </div>
-              </div>
-              
-              {/* Compartimentos dos medicamentos */}
-              <div className="p-4">
-                <div className="grid grid-cols-7 gap-1">
+                
+                {/* Indicadores de compartimentos */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-1">
                   {[
-                    { day: 'DOM', color: 'from-red-500 to-red-600' },
-                    { day: 'SEG', color: 'from-orange-500 to-orange-600' },
-                    { day: 'TER', color: 'from-green-500 to-green-600' },
-                    { day: 'QUA', color: 'from-teal-500 to-teal-600' },
-                    { day: 'QUI', color: 'from-cyan-500 to-cyan-600' },
-                    { day: 'SEX', color: 'from-blue-500 to-blue-600' },
-                    { day: 'SÁB', color: 'from-purple-500 to-purple-600' }
+                    { color: 'bg-red-400', active: false },
+                    { color: 'bg-orange-400', active: false },
+                    { color: 'bg-green-400', active: true },
+                    { color: 'bg-teal-400', active: false },
+                    { color: 'bg-cyan-400', active: false },
+                    { color: 'bg-blue-400', active: false },
+                    { color: 'bg-purple-400', active: false }
                   ].map((item, i) => (
-                    <div key={i} className="space-y-1">
-                      <div className={`h-20 bg-gradient-to-b ${item.color} rounded-lg relative overflow-hidden border border-white/20`}>
-                        {/* Simulação de comprimidos */}
-                        {Array.from({ length: 3 }).map((_, j) => (
-                          <div
-                            key={j}
-                            className="absolute w-3 h-3 bg-white/80 rounded-full"
-                            style={{
-                              left: `${20 + (j * 15)}%`,
-                              top: `${20 + (j * 20)}%`,
-                            }}
-                          ></div>
-                        ))}
-                      </div>
-                      <div className="text-xs text-white text-center font-bold">
-                        {item.day}
-                      </div>
-                    </div>
+                    <div 
+                      key={i} 
+                      className={`w-3 h-3 rounded-full ${item.color} ${item.active ? 'animate-pulse' : 'opacity-60'} border border-white/30`}
+                    ></div>
                   ))}
                 </div>
               </div>
-            </div>
-            
-            {/* Nota: Substitua pela imagem real */}
-            <div className="absolute top-2 left-2 bg-yellow-500/20 backdrop-blur-sm rounded-lg px-2 py-1">
-              <div className="text-xs text-yellow-300">Placeholder - Adicione a imagem em /public/images/dispensador.png</div>
             </div>
             
             {/* 3D Shadow */}

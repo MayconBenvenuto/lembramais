@@ -673,63 +673,54 @@ function Interactive3DDevice() {
             transformStyle: 'preserve-3d',
           }}
         >
-          {/* Main Device Placeholder */}
+          {/* Main Device - Imagem Real */}
           <div className="relative">
-            {/* Placeholder para o dispensador */}
-            <div className="w-80 h-96 mx-auto bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl border border-white/20 shadow-2xl overflow-hidden">
-              {/* Display Superior */}
-              <div className="bg-black rounded-t-3xl p-4 border-b border-white/10">
-                <div className="text-center space-y-2">
-                  <div className="text-xs text-gray-400 font-medium">DISPENSADOR DE REMÉDIOS</div>
-                  <div className="text-4xl font-bold text-white">08:30</div>
-                  <div className="text-sm text-gray-300">TERÇA-FEIRA</div>
-                  <div className="flex items-center justify-center space-x-2 mt-3">
-                    <div className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center">
-                      <div className="w-4 h-4 bg-white rounded-full"></div>
+            {/* Imagem do dispensador real */}
+            <div className="w-80 h-96 mx-auto relative">
+              <img 
+                src="/images/dispensador.png" 
+                alt="Dispensador de Medicamentos PillTech" 
+                className="w-full h-full object-contain rounded-3xl shadow-2xl"
+                style={{ filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))' }}
+              />
+              
+              {/* Overlay com informações interativas */}
+              <div className="absolute inset-0 pointer-events-none">
+                {/* Display de status no topo */}
+                <div className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm rounded-xl px-4 py-2 border border-cyan-400/30">
+                  <div className="text-center space-y-1">
+                    <div className="text-xs text-gray-300 font-medium">PRÓXIMA DOSE</div>
+                    <div className="text-lg font-bold text-cyan-400">08:30</div>
+                    <div className="flex items-center justify-center space-x-1">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-xs text-green-400">ATIVO</span>
                     </div>
-                    <span className="text-cyan-400 font-medium">PRÓXIMA DOSE</span>
                   </div>
                 </div>
-              </div>
-              
-              {/* Compartimentos dos medicamentos */}
-              <div className="p-4">
-                <div className="grid grid-cols-7 gap-1">
+                
+                {/* Indicadores de compartimentos */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-1">
                   {[
-                    { day: 'DOM', color: 'from-red-500 to-red-600' },
-                    { day: 'SEG', color: 'from-orange-500 to-orange-600' },
-                    { day: 'TER', color: 'from-green-500 to-green-600' },
-                    { day: 'QUA', color: 'from-teal-500 to-teal-600' },
-                    { day: 'QUI', color: 'from-cyan-500 to-cyan-600' },
-                    { day: 'SEX', color: 'from-blue-500 to-blue-600' },
-                    { day: 'SÁB', color: 'from-purple-500 to-purple-600' }
+                    { color: 'bg-red-400', active: false },
+                    { color: 'bg-orange-400', active: false },
+                    { color: 'bg-green-400', active: true },
+                    { color: 'bg-teal-400', active: false },
+                    { color: 'bg-cyan-400', active: false },
+                    { color: 'bg-blue-400', active: false },
+                    { color: 'bg-purple-400', active: false }
                   ].map((item, i) => (
-                    <div key={i} className="space-y-1">
-                      <div className={`h-20 bg-gradient-to-b ${item.color} rounded-lg relative overflow-hidden border border-white/20`}>
-                        {/* Simulação de comprimidos */}
-                        {Array.from({ length: 3 }).map((_, j) => (
-                          <div
-                            key={j}
-                            className="absolute w-3 h-3 bg-white/80 rounded-full"
-                            style={{
-                              left: `${20 + (j * 15)}%`,
-                              top: `${20 + (j * 20)}%`,
-                            }}
-                          ></div>
-                        ))}
-                      </div>
-                      <div className="text-xs text-white text-center font-bold">
-                        {item.day}
-                      </div>
-                    </div>
+                    <div 
+                      key={i} 
+                      className={`w-3 h-3 rounded-full ${item.color} ${item.active ? 'animate-pulse' : 'opacity-60'} border border-white/30`}
+                    ></div>
                   ))}
                 </div>
               </div>
             </div>
             
-            {/* Nota: Substitua pela imagem real */}
-            <div className="absolute top-2 left-2 bg-yellow-500/20 backdrop-blur-sm rounded-lg px-2 py-1">
-              <div className="text-xs text-yellow-300">Placeholder - Adicione a imagem em /public/images/dispensador.png</div>
+            {/* Nota: Imagem implementada com sucesso */}
+            <div className="absolute top-2 left-2 bg-green-500/20 backdrop-blur-sm rounded-lg px-2 py-1">
+              <div className="text-xs text-green-300">✅ Imagem do dispensador carregada</div>
             </div>
             
             {/* 3D Shadow */}
