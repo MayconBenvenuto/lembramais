@@ -183,14 +183,12 @@ export default function App() {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Acompanhe como o dispensador funciona na prática e como é fácil de usar no dia a dia
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">            <VideoPlayer
-              src="/porta-comprimidos/videos/exemplos (1).mp4"
+          </div>          <div className="grid md:grid-cols-2 gap-12 items-center">            <VideoPlayer
+              src="./videos/exemplos (1).mp4"
               title="Demonstração do LED Inteligente"
               description="Veja como o compartimento acende automaticamente no horário programado para lembrar da medicação."
             />            <VideoPlayer
-              src="/porta-comprimidos/videos/exemplos (2).mp4"
+              src="./videos/exemplos (2).mp4"
               title="Configuração e Uso"
               description="Demonstração de como configurar horários e usar o dispositivo no dia a dia."
             />
