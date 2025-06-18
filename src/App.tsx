@@ -10,28 +10,31 @@ export default function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      {/* Animated Background */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-cyan-900/20"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
-
-      {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-black/80 backdrop-blur-xl border-b border-white/10' : 'bg-transparent'}`}>
+    <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
+      {/* Rainbow Flash Effects */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        {/* Main Rainbow Glow */}
+        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-gradient-to-r from-red-500/20 via-yellow-500/20 via-green-500/20 via-blue-500/20 via-indigo-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/15 via-pink-500/15 via-red-500/15 via-orange-500/15 to-yellow-500/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        
+        {/* Rainbow Flash Streaks */}
+        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500/30 via-orange-500/30 via-yellow-500/30 via-green-500/30 via-blue-500/30 via-indigo-500/30 to-purple-500/30 animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-l from-purple-500/20 via-blue-500/20 via-green-500/20 via-yellow-500/20 to-red-500/20 animate-pulse delay-500"></div>
+        
+        {/* Rainbow Particles */}
+        <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-gradient-to-r from-red-500 to-orange-500 rounded-full animate-ping"></div>
+        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-gradient-to-r from-green-500 to-blue-500 rounded-full animate-ping delay-700"></div>
+        <div className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-ping delay-1500"></div>
+      </div>      {/* Navigation */}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-black/90 backdrop-blur-xl border-b border-white/20' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-3">
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">P</span>
+            <div className="flex items-center space-x-3">              <div className="relative">
+                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg shadow-white/20">
+                  <span className="text-black font-bold text-xl">L+</span>
                 </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>
-              </div>              <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              </div><span className="text-2xl font-bold text-white">
                 Lembra+
               </span>
             </div>            <div className="hidden md:flex items-center space-x-8">
@@ -40,7 +43,7 @@ export default function App() {
               <NavLink href="#benefits">Benefícios</NavLink>
               <NavLink href="#tech">Tecnologia</NavLink>
               <NavLink href="#contact">Contato</NavLink>
-              <button className="bg-gradient-to-r from-purple-500 to-cyan-500 px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300">
+              <button className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gradient-to-r hover:from-red-500 hover:via-yellow-500 hover:via-green-500 hover:via-blue-500 hover:via-indigo-500 hover:to-purple-500 hover:text-white transition-all duration-300 transform hover:scale-105">
                 Solicitar Demo
               </button>
             </div>
@@ -72,36 +75,34 @@ export default function App() {
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div className="space-y-6 lg:space-y-8 z-10 text-center lg:text-left">
-            <div className="space-y-4 lg:space-y-6">              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 border border-white/20">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-xs sm:text-sm font-medium">Lançamento Oficial</span>
+            <div className="space-y-4 lg:space-y-6">              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 border border-white/30">
+                <div className="w-2 h-2 bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 rounded-full animate-pulse"></div>
+                <span className="text-xs sm:text-sm font-medium text-white">Lançamento Oficial</span>
               </div>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white">
                 Lembra+
-                <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent animate-pulse">
                   Cuidado Inteligente
                 </span>
               </h1>
               
-              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 O compartimento inteligente que acende no horário certo para lembrar você de tomar seus medicamentos. 
                 Conectado ao seu celular para maior autonomia e segurança.
               </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-              <button className="group bg-gradient-to-r from-purple-500 to-cyan-500 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:-translate-y-1">
+            </div>            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+              <button className="group bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg hover:bg-gradient-to-r hover:from-red-500 hover:via-yellow-500 hover:via-green-500 hover:via-blue-500 hover:via-indigo-500 hover:to-purple-500 hover:text-white transition-all duration-500 transform hover:-translate-y-1 hover:scale-105">
                 <span className="flex items-center justify-center space-x-2">
                   <span>Explorar Agora</span>
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
-              </button>              <button className="border-2 border-white/20 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg hover:bg-white/10 transition-all duration-300">
+              </button>              <button className="border-2 border-white/50 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300">
                 <a href="#videos">Ver Demonstração</a>
               </button>
-            </div>            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-6 lg:pt-8 max-w-md mx-auto lg:max-w-none lg:mx-0">
+            </div><div className="grid grid-cols-3 gap-4 sm:gap-8 pt-6 lg:pt-8 max-w-md mx-auto lg:max-w-none lg:mx-0">
               <StatCard number="7" label="Dias" />
               <StatCard number="30" label="Dias Bateria" />
               <StatCard number="LED" label="Inteligente" />
@@ -109,8 +110,8 @@ export default function App() {
           </div>          {/* 3D Interactive Device */}
           <div className="relative z-10 order-first lg:order-last">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-2xl lg:rounded-3xl blur-2xl lg:blur-3xl"></div>
-              <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 border border-white/10 backdrop-blur-sm">
+              <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-yellow-500/10 via-green-500/10 via-blue-500/10 via-indigo-500/10 to-purple-500/10 rounded-2xl lg:rounded-3xl blur-3xl animate-pulse"></div>
+              <div className="relative bg-black/50 backdrop-blur-sm rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 border border-white/20">
                 <Interactive3DDevice />
               </div>
             </div>
@@ -118,66 +119,57 @@ export default function App() {
         </div>
       </section>      {/* Features Section */}
       <section id="features" className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 border border-white/20">
-              <span className="text-xs sm:text-sm font-medium">Recursos Avançados</span>
-            </div>            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold px-4">
+        <div className="max-w-7xl mx-auto">          <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
+            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 border border-white/30">
+              <span className="text-xs sm:text-sm font-medium text-white">Recursos Avançados</span>
+            </div>            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold px-4 text-white">
               Tecnologia que
-              <span className="block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
                 Cuida com Carinho
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+            <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto px-4">
               Funcionalidades pensadas especialmente para promover autonomia e segurança na medicação
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">            <FeatureCard
+          </div>          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">            <FeatureCard
               icon="💡"
               title="Sinal Luminoso Inteligente"
               description="O compartimento acende automaticamente no horário correto para lembrar você de tomar seus medicamentos."
-              gradient="from-yellow-500 to-orange-500"
             />            <FeatureCard
               icon="⏰"
               title="Lembretes Programáveis"
               description="Configure diferentes horários para diversos medicamentos ao longo do dia com facilidade."
-              gradient="from-cyan-500 to-blue-500"
             />            <FeatureCard
               icon="👥"
               title="Cuidado Familiar"
               description="Familiares e cuidadores podem observar visualmente se o medicamento foi tomado."
-              gradient="from-green-500 to-teal-500"
             />            <FeatureCard
               icon="🔋"
               title="Bateria Duradoura"
               description="Autonomia de longa duração com indicador visual de bateria baixa no próprio dispositivo."
-              gradient="from-purple-500 to-pink-500"
             />            <FeatureCard
               icon="📊"
               title="Controle Visual"
               description="Acompanhe facilmente quais medicamentos já foram tomados através dos indicadores visuais."
-              gradient="from-pink-500 to-red-500"
             />
           </div>
         </div>
       </section>      {/* Video Demo Section */}
       <section id="videos" className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 border border-white/20">
-              <span className="text-xs sm:text-sm font-medium">Demonstração</span>
+        <div className="max-w-7xl mx-auto">          <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
+            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 border border-white/30">
+              <span className="text-xs sm:text-sm font-medium text-white">Demonstração</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold px-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold px-4 text-white">
               Veja o Lembra+
-              <span className="block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
                 em Ação
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+            <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto px-4">
               Acompanhe como o dispensador funciona na prática e como é fácil de usar no dia a dia
             </p>
-          </div>          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">            <VideoPlayer
+          </div><div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">            <VideoPlayer
               src="./videos/exemplos (1).mp4"
               title="Demonstração do LED Inteligente"
               description="Veja como o compartimento acende automaticamente no horário programado para lembrar da medicação."
@@ -191,18 +183,17 @@ export default function App() {
       </section>      {/* Benefits Section */}
       <section id="benefits" className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          <div className="space-y-8 sm:space-y-12 order-2 lg:order-1">
-            <div className="space-y-4 sm:space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 border border-white/20">
-                <span className="text-xs sm:text-sm font-medium">Resultados Comprovados</span>
+          <div className="space-y-8 sm:space-y-12 order-2 lg:order-1">            <div className="space-y-4 sm:space-y-6 text-center lg:text-left">
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 border border-white/30">
+                <span className="text-xs sm:text-sm font-medium text-white">Resultados Comprovados</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold px-4 lg:px-0">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold px-4 lg:px-0 text-white">
                 Melhore sua
-                <span className="block bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
                   Qualidade de Vida
                 </span>
               </h2>
-            </div>            <div className="space-y-6 sm:space-y-8">
+            </div><div className="space-y-6 sm:space-y-8">
               <BenefitItem
                 percentage="85%"
                 title="Redução de Esquecimentos"
@@ -416,18 +407,17 @@ export default function App() {
             </div>
 
             <div className="space-y-4 sm:space-y-6 text-center sm:text-left">
-              <h3 className="text-base sm:text-lg font-semibold">Contato</h3>
-              <div className="space-y-2 sm:space-y-3 text-gray-400 text-sm sm:text-base">
-                <p className="flex items-center justify-center sm:justify-start space-x-2">
-                  <span>📧</span>
+              <h3 className="text-base sm:text-lg font-semibold">Contato</h3>              <div className="space-y-2 sm:space-y-3 text-gray-400 text-sm sm:text-base">
+                <p className="flex items-center justify-center sm:justify-start space-x-3">
+                  <span className="inline-flex items-center justify-center w-8 h-8 bg-white rounded-lg shadow-sm">📧</span>
                   <span>contato@lembramais.com.br</span>
                 </p>
-                <p className="flex items-center justify-center sm:justify-start space-x-2">
-                  <span>📞</span>
+                <p className="flex items-center justify-center sm:justify-start space-x-3">
+                  <span className="inline-flex items-center justify-center w-8 h-8 bg-white rounded-lg shadow-sm">📞</span>
                   <span>+55 (11) 9999-9999</span>
                 </p>
-                <p className="flex items-center justify-center sm:justify-start space-x-2">
-                  <span>📍</span>
+                <p className="flex items-center justify-center sm:justify-start space-x-3">
+                  <span className="inline-flex items-center justify-center w-8 h-8 bg-white rounded-lg shadow-sm">📍</span>
                   <span>São Paulo, Brasil</span>
                 </p>
               </div>
@@ -457,29 +447,27 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 function StatCard({ number, label }: { number: string; label: string }) {
   return (
     <div className="text-center">
-      <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+      <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent animate-pulse">
         {number}
       </div>
-      <div className="text-xs sm:text-sm text-gray-400 mt-1">{label}</div>
+      <div className="text-xs sm:text-sm text-white/70 mt-1">{label}</div>
     </div>
   );
 }
 
-function FeatureCard({ icon, title, description, gradient }: {
+function FeatureCard({ icon, title, description }: {
   icon: string;
   title: string;
   description: string;
-  gradient: string;
 }) {
   return (
     <div className="group relative">
-      <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl lg:rounded-2xl blur-xl"></div>
-      <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl lg:rounded-2xl p-4 sm:p-6 lg:p-8 hover:border-white/20 transition-all duration-300 transform hover:-translate-y-1 lg:hover:-translate-y-2">
-        <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r ${gradient} rounded-xl lg:rounded-2xl flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6`}>
+      <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 via-yellow-500/20 via-green-500/20 via-blue-500/20 via-indigo-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl lg:rounded-2xl blur-xl"></div>
+      <div className="relative bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl lg:rounded-2xl p-4 sm:p-6 lg:p-8 hover:border-white/40 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1 lg:hover:-translate-y-2">        <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-white rounded-xl lg:rounded-2xl flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6 shadow-lg">
           {icon}
         </div>
-        <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">{title}</h3>
-        <p className="text-gray-400 leading-relaxed text-sm sm:text-base">{description}</p>
+        <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">{title}</h3>
+        <p className="text-white/70 leading-relaxed text-sm sm:text-base">{description}</p>
       </div>
     </div>
   );
@@ -493,13 +481,13 @@ function BenefitItem({ percentage, title, description }: {
   return (
     <div className="flex items-start space-x-4 sm:space-x-6">
       <div className="flex-shrink-0">
-        <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r from-green-500 to-cyan-500 rounded-xl lg:rounded-2xl flex items-center justify-center">
-          <span className="text-lg sm:text-xl font-bold">{percentage}</span>
+        <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 rounded-xl lg:rounded-2xl flex items-center justify-center animate-pulse">
+          <span className="text-lg sm:text-xl font-bold text-white">{percentage}</span>
         </div>
       </div>
       <div className="space-y-1 sm:space-y-2">
-        <h3 className="text-lg sm:text-xl font-bold">{title}</h3>
-        <p className="text-gray-400 leading-relaxed text-sm sm:text-base">{description}</p>
+        <h3 className="text-lg sm:text-xl font-bold text-white">{title}</h3>
+        <p className="text-white/70 leading-relaxed text-sm sm:text-base">{description}</p>
       </div>
     </div>
   );
@@ -536,9 +524,10 @@ function TechCard({ title, value, icon, description }: {
   icon: string;
   description: string;
 }) {
-  return (
-    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl lg:rounded-2xl p-4 sm:p-5 lg:p-6 hover:border-white/20 transition-all duration-300 transform hover:-translate-y-1">
-      <div className="text-2xl sm:text-3xl mb-3 sm:mb-4">{icon}</div>
+  return (    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl lg:rounded-2xl p-4 sm:p-5 lg:p-6 hover:border-white/20 transition-all duration-300 transform hover:-translate-y-1">
+      <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-lg mb-3 sm:mb-4 shadow-lg">
+        <span className="text-xl sm:text-2xl">{icon}</span>
+      </div>
       <h3 className="font-semibold text-gray-300 mb-2 text-sm sm:text-base">{title}</h3>
       <div className="text-lg sm:text-xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2">
         {value}
