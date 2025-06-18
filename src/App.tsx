@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import dispensadorImage from '/images/dispensador.png';
 
 export default function App() {
@@ -34,10 +34,9 @@ export default function App() {
               </div>              <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                 Lembra+
               </span>
-            </div>
-
-            <div className="hidden md:flex items-center space-x-8">
+            </div>            <div className="hidden md:flex items-center space-x-8">
               <NavLink href="#features">Recursos</NavLink>
+              <NavLink href="#videos">Demonstração</NavLink>
               <NavLink href="#benefits">Benefícios</NavLink>
               <NavLink href="#tech">Tecnologia</NavLink>
               <NavLink href="#contact">Contato</NavLink>
@@ -58,10 +57,10 @@ export default function App() {
             </button>
           </div>
 
-          {isMenuOpen && (
-            <div className="md:hidden py-4 border-t border-white/10">
+          {isMenuOpen && (            <div className="md:hidden py-4 border-t border-white/10">
               <div className="flex flex-col space-y-4">
                 <NavLink href="#features">Recursos</NavLink>
+                <NavLink href="#videos">Demonstração</NavLink>
                 <NavLink href="#benefits">Benefícios</NavLink>
                 <NavLink href="#tech">Tecnologia</NavLink>
                 <NavLink href="#contact">Contato</NavLink>
@@ -101,18 +100,15 @@ export default function App() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
-              </button>
-              <button className="border-2 border-white/20 backdrop-blur-sm px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/10 transition-all duration-300">
-                Ver Demonstração
+              </button>              <button className="border-2 border-white/20 backdrop-blur-sm px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/10 transition-all duration-300">
+                <a href="#videos">Ver Demonstração</a>
               </button>
             </div>            <div className="grid grid-cols-3 gap-8 pt-8">
               <StatCard number="7" label="Dias" />
               <StatCard number="30" label="Dias Bateria" />
               <StatCard number="LED" label="Inteligente" />
             </div>
-          </div>
-
-          {/* 3D Interactive Device */}
+          </div>          {/* 3D Interactive Device */}
           <div className="relative z-10">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-3xl blur-3xl"></div>
@@ -147,32 +143,56 @@ export default function App() {
               description="O compartimento acende automaticamente no horário correto para lembrar você de tomar seus medicamentos."
               gradient="from-yellow-500 to-orange-500"
             />            <FeatureCard
-              icon="📱"
-              title="App Conectado"
-              description="Aplicativo no celular para configurar horários, acompanhar histórico e receber notificações."
+              icon="⏰"
+              title="Lembretes Programáveis"
+              description="Configure diferentes horários para diversos medicamentos ao longo do dia com facilidade."
               gradient="from-cyan-500 to-blue-500"
-            />
-            <FeatureCard
+            />            <FeatureCard
               icon="👥"
               title="Cuidado Familiar"
-              description="Familiares e cuidadores podem acompanhar remotamente através do aplicativo compartilhado."
+              description="Familiares e cuidadores podem observar visualmente se o medicamento foi tomado."
               gradient="from-green-500 to-teal-500"
             />            <FeatureCard
               icon="🔋"
               title="Bateria Duradoura"
-              description="Autonomia de longa duração com indicador de bateria baixa no aplicativo."
+              description="Autonomia de longa duração com indicador visual de bateria baixa no próprio dispositivo."
               gradient="from-purple-500 to-pink-500"
-            />
-            <FeatureCard
-              icon="⏰"
-              title="Múltiplos Horários"
-              description="Configure diferentes horários para diversos medicamentos ao longo do dia."
-              gradient="from-blue-500 to-purple-500"
             />            <FeatureCard
               icon="📊"
-              title="Histórico Completo"
-              description="Acompanhe a adesão ao tratamento com relatórios detalhados no aplicativo."
+              title="Controle Visual"
+              description="Acompanhe facilmente quais medicamentos já foram tomados através dos indicadores visuais."
               gradient="from-pink-500 to-red-500"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Video Demo Section */}
+      <section id="videos" className="relative py-32 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-6 mb-20">
+            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+              <span className="text-sm font-medium">Demonstração</span>
+            </div>
+            <h2 className="text-5xl font-bold">
+              Veja o Lembra+
+              <span className="block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                em Ação
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Acompanhe como o dispensador funciona na prática e como é fácil de usar no dia a dia
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">            <VideoPlayer
+              src="/porta-comprimidos/videos/exemplos (1).mp4"
+              title="Demonstração do LED Inteligente"
+              description="Veja como o compartimento acende automaticamente no horário programado para lembrar da medicação."
+            />            <VideoPlayer
+              src="/porta-comprimidos/videos/exemplos (2).mp4"
+              title="Configuração e Uso"
+              description="Demonstração de como configurar horários e usar o dispositivo no dia a dia."
             />
           </div>
         </div>
@@ -273,12 +293,11 @@ export default function App() {
               value="7 Divisões"
               icon="📦"
               description="Um para cada dia da semana"
-            />
-            <TechCard
+            />            <TechCard
               title="Conectividade"
-              value="Bluetooth + Wi-Fi"
+              value="Bluetooth"
               icon="📡"
-              description="Conexão estável com o aplicativo"
+              description="Conexão opcional para configurações avançadas"
             />
             <TechCard
               title="Bateria"
@@ -292,11 +311,11 @@ export default function App() {
               icon="🛡️"
               description="Seguro para contato com medicamentos"
             />            <TechCard
-              title="App Mobile"
-              value="iOS + Android"
-              icon="📱"
-              description="Controle total pelo smartphone"
-            />            <TechCard
+              title="Interface"
+              value="LED + Botões"
+              icon="🎛️"
+              description="Controle simples e intuitivo no próprio dispositivo"
+            /><TechCard
               title="Notificações"
               value="Push + SMS"
               icon="🔔"
@@ -393,12 +412,11 @@ export default function App() {
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-lg font-semibold">Produto</h3>
-              <ul className="space-y-3 text-gray-400">
+              <h3 className="text-lg font-semibold">Produto</h3>              <ul className="space-y-3 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Como Funciona</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Especificações</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Onde Comprar</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">App Mobile</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Manual do Usuário</a></li>
               </ul>
             </div>
 
@@ -563,7 +581,6 @@ function Interactive3DDevice() {
     setIsDragging(true);
     setLastMousePos({ x: e.clientX, y: e.clientY });
   };
-
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging) return;
 
@@ -572,7 +589,7 @@ function Interactive3DDevice() {
 
     setRotation(prev => ({
       x: Math.max(-45, Math.min(45, prev.x - deltaY * 0.5)),
-      y: prev.y + deltaX * 0.5
+      y: Math.max(-45, Math.min(45, prev.y + deltaX * 0.5))
     }));
 
     setLastMousePos({ x: e.clientX, y: e.clientY });
@@ -594,11 +611,9 @@ function Interactive3DDevice() {
 
     const touch = e.touches[0];
     const deltaX = touch.clientX - lastMousePos.x;
-    const deltaY = touch.clientY - lastMousePos.y;
-
-    setRotation(prev => ({
+    const deltaY = touch.clientY - lastMousePos.y;    setRotation(prev => ({
       x: Math.max(-45, Math.min(45, prev.x - deltaY * 0.5)),
-      y: prev.y + deltaX * 0.5
+      y: Math.max(-45, Math.min(45, prev.y + deltaX * 0.5))
     }));
 
     setLastMousePos({ x: touch.clientX, y: touch.clientY });
@@ -616,12 +631,10 @@ function Interactive3DDevice() {
           <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
           <span>Arrastar para girar</span>
         </div>
-      </div>
-
-      {/* 3D Container */}
+      </div>      {/* 3D Container */}
       <div 
         className="w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing"
-        style={{ perspective: '1000px' }}
+        style={{ perspective: '800px' }}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
@@ -635,7 +648,7 @@ function Interactive3DDevice() {
         onTouchEnd={handleTouchEnd}
       >
         <div
-          className={`relative transition-transform duration-300 ease-out ${isHovering ? 'scale-105' : 'scale-100'}`}
+          className={`relative transition-transform duration-300 ease-out ${isHovering ? 'scale-110' : 'scale-105'}`}
           style={{
             transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
             transformStyle: 'preserve-3d',
@@ -643,7 +656,7 @@ function Interactive3DDevice() {
         >          {/* Main Device - Imagem Real */}
           <div className="relative">
             {/* Imagem do dispensador real */}
-            <div className="w-80 h-96 mx-auto relative">              <img 
+            <div className="w-96 h-[28rem] mx-auto relative">              <img 
                 src={dispensadorImage} 
                 alt="Dispensador de Medicamentos Lembra+" 
                 className="w-full h-full object-contain rounded-3xl shadow-2xl"
@@ -694,39 +707,31 @@ function Interactive3DDevice() {
               className="absolute inset-0 bg-black/30 blur-xl transform translate-y-8 scale-x-75"
               style={{ transformStyle: 'preserve-3d', transform: 'translateZ(-50px)' }}
             ></div>
-          </div>
-
-          {/* Interactive Glow Effects */}
+          </div>          {/* Interactive Glow Effects - Simplificados */}
           <div className="absolute inset-0 pointer-events-none">
             {/* Top glow */}
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60 animate-pulse"></div>
-            
-            {/* Side glows */}
-            <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-1 h-32 bg-gradient-to-b from-transparent via-purple-400 to-transparent opacity-60 animate-pulse delay-500"></div>
-            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-1 h-32 bg-gradient-to-b from-transparent via-purple-400 to-transparent opacity-60 animate-pulse delay-1000"></div>
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-40 animate-pulse"></div>
           </div>
 
-          {/* Floating particles */}
+          {/* Floating particles - Reduzidos */}
           <div className="absolute inset-0 pointer-events-none">
-            {Array.from({ length: 6 }).map((_, i) => (
+            {Array.from({ length: 3 }).map((_, i) => (
               <div
                 key={i}
                 className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-ping"
                 style={{
-                  left: `${20 + (i * 12)}%`,
-                  top: `${30 + (i * 8)}%`,
-                  animationDelay: `${i * 300}ms`,
-                  animationDuration: '2s'
+                  left: `${30 + (i * 20)}%`,
+                  top: `${40 + (i * 10)}%`,
+                  animationDelay: `${i * 500}ms`,
+                  animationDuration: '3s'
                 }}
               ></div>
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Info Panel */}
+      </div>      {/* Info Panel - Simplificado */}
       <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-        <div className="grid grid-cols-3 gap-4 text-center">
+        <div className="grid grid-cols-2 gap-4 text-center">
           <div>
             <div className="text-lg font-bold text-cyan-400">7 dias</div>
             <div className="text-xs text-gray-400">Capacidade</div>
@@ -735,11 +740,82 @@ function Interactive3DDevice() {
             <div className="text-lg font-bold text-purple-400">Smart</div>
             <div className="text-xs text-gray-400">Display OLED</div>
           </div>
-          <div>
-            <div className="text-lg font-bold text-green-400">AI</div>
-            <div className="text-xs text-gray-400">Powered</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function VideoPlayer({ src, title, description }: {
+  src: string;
+  title: string;
+  description: string;
+}) {
+  const [isMuted, setIsMuted] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  return (
+    <div className="space-y-6">
+      <div 
+        className="relative group rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-black border border-white/10"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <video
+          ref={videoRef}
+          src={src}
+          autoPlay
+          loop
+          muted={isMuted}
+          playsInline
+          className="w-full h-auto rounded-2xl"
+          style={{ minHeight: '300px' }}
+        />
+        
+        {/* Overlay Controls */}
+        <div className={`absolute inset-0 bg-black/20 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="absolute bottom-4 right-4">
+            <button
+              onClick={toggleMute}
+              className="bg-black/50 backdrop-blur-sm border border-white/20 rounded-full p-3 hover:bg-white/10 transition-all duration-300"
+              title={isMuted ? 'Ativar som' : 'Desativar som'}
+            >
+              {isMuted ? (
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                </svg>
+              )}
+            </button>
+          </div>
+            {/* Play indicator */}
+          <div className="absolute top-4 left-4">
+            <div className="bg-black/50 backdrop-blur-sm rounded-full px-3 py-1 text-xs text-white flex items-center space-x-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span>DEMONSTRAÇÃO</span>
+            </div>
           </div>
         </div>
+
+        {/* Glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </div>
+
+      <div className="space-y-3">
+        <h3 className="text-2xl font-bold">{title}</h3>
+        <p className="text-gray-400 leading-relaxed">{description}</p>
       </div>
     </div>
   );
